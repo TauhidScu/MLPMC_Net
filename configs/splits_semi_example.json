@@ -1,0 +1,32 @@
+[
+  {
+    "_comment": "Fold 0 of nnU-Net 5-fold cross-validation protocol",
+    "train": ["cls_000", "cls_001", "cls_002", "cls_003"],
+    "train_u": ["cls_004", "cls_005", "cls_006", "cls_007"],
+    "val": ["cls_008", "cls_009"]
+  },
+  {
+    "_comment": "Fold 1",
+    "train": ["cls_002", "cls_003", "cls_004", "cls_005"],
+    "train_u": ["cls_006", "cls_007", "cls_008", "cls_009"],
+    "val": ["cls_000", "cls_001"]
+  },
+  {
+    "_comment": "Fold 2",
+    "train": ["cls_004", "cls_005", "cls_006", "cls_007"],
+    "train_u": ["cls_000", "cls_001", "cls_008", "cls_009"],
+    "val": ["cls_002", "cls_003"]
+  },
+  {
+    "_comment": "Fold 3",
+    "train": ["cls_006", "cls_007", "cls_008", "cls_009"],
+    "train_u": ["cls_000", "cls_001", "cls_002", "cls_003"],
+    "val": ["cls_004", "cls_005"]
+  },
+  {
+    "_comment": "Fold 4",
+    "train": ["cls_000", "cls_001", "cls_008", "cls_009"],
+    "train_u": ["cls_002", "cls_003", "cls_004", "cls_005"],
+    "val": ["cls_006", "cls_007"]
+  }
+]

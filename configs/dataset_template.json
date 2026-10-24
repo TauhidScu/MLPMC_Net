@@ -1,0 +1,23 @@
+{
+  "name": "Dataset702_cls",
+  "description": "Multi-Label Pathology Classification + Choroid Segmentation (MLPMC)",
+  "reference": "MLPMC Paper",
+  "licence": "CC-BY-SA 4.0",
+  "release": "1.0",
+  "tensorImageSize": "2D",
+  "channel_names": {
+    "0": "OCT"
+  },
+  "labels": {
+    "background": 0,
+    "choroid": 1
+  },
+  "classification_labels": {
+    "0": "RS",
+    "1": "MH",
+    "2": "RD",
+    "3": "CNV"
+  },
+  "numTraining": 100,
+  "file_ending": ".png"
+}
