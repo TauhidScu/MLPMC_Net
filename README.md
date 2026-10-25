@@ -11,9 +11,7 @@ Official PyTorch implementation of the final paper model (**MLPMC-Net**) and tra
 - [Installation Guide](#-complete-setup--installation-guide)
 - [Training Guide](#-training-guide)
 - [Evaluation & Reproducibility](#-evaluation--reproducibility)
-- [Interpretability with Grad-CAM](#-interpretability-with-grad-cam)
 - [Acknowledgements](#-acknowledgements)
-- [Citation](#-citation)
 
 ---
 
@@ -233,43 +231,6 @@ python scripts/evaluate.py \
     --device cuda
 ```
 
-### Sample Evaluation Output Table
-```text
-=================================================================
-EVALUATION RESULTS (Validation Split)
-=================================================================
-Class     Accuracy     Precision        Recall      F1-Score     Cases
------------------------------------------------------------------
-RS          94.25%        0.8842        0.8520        0.8678        87
-MH          96.10%        0.9125        0.8940        0.9031        87
-RD          92.80%        0.8560        0.8310        0.8433        87
-CNV         95.40%        0.8910        0.8750        0.8829        87
------------------------------------------------------------------
-Macro       94.64%        0.8859        0.8630        0.8743       348
-=================================================================
-Segmentation Mean Dice Score: 0.8912 (across 87 annotated slices)
-=================================================================
-```
-
----
-
-## 🔍 Interpretability with Grad-CAM
-
-To visualize class activation maps and examine where the model focuses for each pathology:
-
-```bash
-python scripts/gradcam.py \
-    --ckpt $nnUNet_results/Dataset702_cls/nnUNetTrainercls_mlpmc_final__nnUNetPlans__2d/fold_0/checkpoint_best_val.pth \
-    --input $nnUNet_preprocessed/Dataset702_cls/nnUNetPlans_2d/cls_000.npz \
-    --out-dir ./cam_outputs \
-    --target-class all
-```
-
-* `--target-class`: Choose `RS`, `MH`, `RD`, `CNV`, or `all` to generate heatmaps for each disease label.
-* The script generates high-resolution color heatmaps overlaid onto the original B-scan.
-
----
-
 ## 🙏 Acknowledgements
 
 We gratefully acknowledge the following open-source projects and codebases that made this research possible:
@@ -277,16 +238,3 @@ We gratefully acknowledge the following open-source projects and codebases that 
 2. **nnU-Net Framework**: We thank the Division of Medical Image Computing at the German Cancer Research Center (DKFZ) for developing the [nnU-Net framework](https://github.com/MIC-DKFZ/nnUNet), which provided the preprocessing, data loading, and execution pipelines.
 
 ---
-
-## 📝 Citation
-
-If you use MLPMC in your research or find this codebase helpful, please cite our paper:
-
-```bibtex
-@article{mlpmc2026,
-  title={Multi-Label Pathology Multi-Task Classification and Segmentation for Retinal Optical Coherence Tomography},
-  author={Authors},
-  journal={Medical Image Analysis / IEEE Transactions on Medical Imaging},
-  year={2026}
-}
-```
